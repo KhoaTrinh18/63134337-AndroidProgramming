@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    tools:context=".CountryActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="#7D6565"
+        android:backgroundTint="#2196F3"
+        android:gravity="center"
+        android:text="Bạn đã chọn"
+        android:textAlignment="center"
+        android:textColor="#EBE7E7"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/subFlagImg"
+        android:layout_width="wrap_content"
+        android:layout_height="139dp"
+        app:srcCompat="@drawable/vietnam" />
+
+    <TextView
+        android:id="@+id/txtSubCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Việt Nam"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtSubPop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Population: 99307144"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+</LinearLayout>
