@@ -475,8 +475,15 @@ public class CalculatorApp {
 					strb = String.valueOf(b);
 				
 				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
 					txtKQ.setText("0");
 					txtPhepTinh.setText("");
+					b = 1;
 				}
 				
 				//Phép tính cộng
@@ -500,17 +507,16 @@ public class CalculatorApp {
 				//Phép tính chia
 				if(txtPhepTinh.getText().contains("÷")) {	
 					if(b == 0) {
-						txtKQ.setText("Nan");
 						btnChia.setEnabled(false);
 						btnNhan.setEnabled(false);
 						btnCong.setEnabled(false);
 						btnTru.setEnabled(false);
 						checkNan = false;
+						txtPhepTinh.setText(stra + " ÷ " + strb + " =");
 					}
 					else {
 						kq = a / b;
 						txtPhepTinh.setText(stra + " ÷ " + strb + " =");
-						
 					}
 				}
 				if(kq == (int) kq) 
@@ -518,6 +524,7 @@ public class CalculatorApp {
 				else 
 					strkq = String.valueOf(kq);
 				txtKQ.setText(strkq);
+				if(b == 0) txtKQ.setText("Nan");
 				a = kq;
 				stra = strkq;
 				
@@ -537,12 +544,14 @@ public class CalculatorApp {
 				txtKQ.setText(String.valueOf(0));
 				if(txtPhepTinh.getText().contains("="))
 					txtPhepTinh.setText("");
-				btnChia.setEnabled(true);
-				btnNhan.setEnabled(true);
-				btnCong.setEnabled(true);
-				btnTru.setEnabled(true);
-				txtPhepTinh.setText("");
-				checkNan = true;
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
 			}
 		});
 		btnCE.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/CEButton.png")));
@@ -557,12 +566,14 @@ public class CalculatorApp {
 			public void mouseClicked(MouseEvent e) {
 				txtKQ.setText("0");
 				txtPhepTinh.setText("");
-				btnChia.setEnabled(true);
-				btnNhan.setEnabled(true);
-				btnCong.setEnabled(true);
-				btnTru.setEnabled(true);
-				txtPhepTinh.setText("");
-				checkNan = true;
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
 			}
 		});
 		btnC.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/CButton.png")));
@@ -583,12 +594,14 @@ public class CalculatorApp {
 					else
 						txtKQ.setText(strkq.toString());
 				}
-				btnChia.setEnabled(true);
-				btnNhan.setEnabled(true);
-				btnCong.setEnabled(true);
-				btnTru.setEnabled(true);
-				txtPhepTinh.setText("");
-				checkNan = true;
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
 			}
 		});
 		btnDel.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/DelButton.png")));
