@@ -21,8 +21,11 @@ public class CalculatorApp {
 	private JFrame frame;
 	private JTextField txtKQ;
 	private JTextField txtPhepTinh;
+	JLabel btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnCham, btnDau;
+	JLabel btnCong, btnTru, btnNhan, btnChia, btnCE, btnC, btnDel, btnBang;
 	private double a, b;
-	private boolean checked = true;
+	private String stra, strb;
+	private boolean checked = true, checkNan = true;
 
 	/**
 	 * Launch the application.
@@ -57,6 +60,7 @@ public class CalculatorApp {
 		frame.getContentPane().setLayout(null);
 		
 		txtKQ = new JTextField();
+		txtKQ.setFocusable(false);
 		txtKQ.setHorizontalAlignment(SwingConstants.RIGHT);
 		txtKQ.setForeground(new Color(255, 255, 255));
 		txtKQ.setFont(new Font("Tahoma", Font.PLAIN, 48));
@@ -65,16 +69,18 @@ public class CalculatorApp {
 		txtKQ.setBorder(null);
 		frame.getContentPane().add(txtKQ);
 		txtKQ.setColumns(10);
-		txtKQ.setText(String.valueOf(0));
+		txtKQ.setText("0");
 		
 		txtPhepTinh = new JTextField();
+		txtPhepTinh.setFocusable(false);
 		txtPhepTinh.setHorizontalAlignment(SwingConstants.RIGHT);
-		txtPhepTinh.setForeground(SystemColor.activeCaptionBorder);
+		txtPhepTinh.setForeground(new Color(192, 192, 192));
 		txtPhepTinh.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		txtPhepTinh.setColumns(10);
 		txtPhepTinh.setBorder(null);
 		txtPhepTinh.setBackground(new Color(45, 45, 45));
 		txtPhepTinh.setBounds(5, 67, 335, 30);
+		
 		frame.getContentPane().add(txtPhepTinh);
 		frame.setBounds(100, 100, 360, 588);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -85,7 +91,7 @@ public class CalculatorApp {
 	
 	public void cacToanHang() {
 		//Khai báo nút dấu +/-
-		JLabel btnDau = new JLabel("");
+		btnDau = new JLabel("");
 		//Xử lý sự kiện khi ấn nút dấu +/-
 		btnDau.addMouseListener(new MouseAdapter() {
 			@Override
@@ -99,7 +105,7 @@ public class CalculatorApp {
 		frame.getContentPane().add(btnDau);
 		
 		//Khai báo nút chấm
-		JLabel btnCham = new JLabel("");
+		btnCham = new JLabel("");
 		//Xử lý sự kiện khi ấn nút chấm
 		btnCham.addMouseListener(new MouseAdapter() {
 			@Override
@@ -114,7 +120,7 @@ public class CalculatorApp {
 		frame.getContentPane().add(btnCham);
 		
 		//Khai báo nút 0
-		JLabel btn0 = new JLabel("New label");
+		btn0 = new JLabel("New label");
 		//Xử lý sự kiện khi ấn nút 0
 		btn0.addMouseListener(new MouseAdapter() {
 			@Override
@@ -123,7 +129,15 @@ public class CalculatorApp {
 					txtKQ.setText("");
 					checked = true;
 				}
-				txtKQ.setText(txtKQ.getText() + String.valueOf(0));
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
+				txtKQ.setText(txtKQ.getText() + 0);
 			}
 		});
 		btn0.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/KhongButton.png")));
@@ -131,7 +145,7 @@ public class CalculatorApp {
 		frame.getContentPane().add(btn0);
 		
 		//Khai báo nút 1
-		JLabel btn1 = new JLabel("");
+		btn1 = new JLabel("");
 		//Xử lý sự kiện khi ấn nút 1
 		btn1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -140,7 +154,15 @@ public class CalculatorApp {
 					txtKQ.setText("");
 					checked = true;
 				}
-				txtKQ.setText(txtKQ.getText() + String.valueOf(1));
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
+				txtKQ.setText(txtKQ.getText() + 1);
 			}
 		});
 		btn1.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/MotButton.png")));
@@ -148,8 +170,8 @@ public class CalculatorApp {
 		frame.getContentPane().add(btn1);
 		
 		//Khai báo nút 2
-		JLabel btn2 = new JLabel("");
-		//Xử lý sự kiện khi ấn nút 1
+		btn2 = new JLabel("");
+		//Xử lý sự kiện khi ấn nút 2
 		btn2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -157,7 +179,15 @@ public class CalculatorApp {
 					txtKQ.setText("");
 					checked = true;
 				}
-				txtKQ.setText(txtKQ.getText() + String.valueOf(2));
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
+				txtKQ.setText(txtKQ.getText() + 2);
 			}
 		});
 		btn2.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/HaiButton.png")));
@@ -165,7 +195,7 @@ public class CalculatorApp {
 		frame.getContentPane().add(btn2);
 		
 		//Khai báo nút 3
-		JLabel btn3 = new JLabel("");
+		btn3 = new JLabel("");
 		//Xử lý sự kiện khi ấn nút 3
 		btn3.addMouseListener(new MouseAdapter() {
 			@Override
@@ -174,7 +204,15 @@ public class CalculatorApp {
 					txtKQ.setText("");
 					checked = true;
 				}
-				txtKQ.setText(txtKQ.getText() + String.valueOf(3));
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
+				txtKQ.setText(txtKQ.getText() + 3);
 			}
 		});
 		btn3.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/BaButton.png")));
@@ -183,7 +221,7 @@ public class CalculatorApp {
 		
 
 		//Khai báo nút 4
-		JLabel btn4 = new JLabel("");
+		btn4 = new JLabel("");
 		//Xử lý sự kiện khi ấn nút 4
 		btn4.addMouseListener(new MouseAdapter() {
 			@Override
@@ -192,7 +230,15 @@ public class CalculatorApp {
 					txtKQ.setText("");
 					checked = true;
 				}
-				txtKQ.setText(txtKQ.getText() + String.valueOf(4));
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
+				txtKQ.setText(txtKQ.getText() + 4);
 			}
 		});
 		btn4.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/BonButton.png")));
@@ -200,7 +246,7 @@ public class CalculatorApp {
 		frame.getContentPane().add(btn4);
 		
 		//Khai báo nút 5
-		JLabel btn5 = new JLabel("");
+		btn5 = new JLabel("");
 		//Xử lý sự kiện khi ấn nút 5
 		btn5.addMouseListener(new MouseAdapter() {
 			@Override
@@ -209,7 +255,15 @@ public class CalculatorApp {
 					txtKQ.setText("");
 					checked = true;
 				}
-				txtKQ.setText(txtKQ.getText() + String.valueOf(5));
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
+				txtKQ.setText(txtKQ.getText() + 5);
 			}
 		});
 		btn5.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/NamButton.png")));
@@ -217,7 +271,7 @@ public class CalculatorApp {
 		frame.getContentPane().add(btn5);
 		
 		//Khai báo nút 6
-		JLabel btn6 = new JLabel("");
+		btn6 = new JLabel("");
 		//Xử lý sự kiện khi ấn nút 6
 		btn6.addMouseListener(new MouseAdapter() {
 			@Override
@@ -226,7 +280,15 @@ public class CalculatorApp {
 					txtKQ.setText("");
 					checked = true;
 				}
-				txtKQ.setText(txtKQ.getText() + String.valueOf(6));
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
+				txtKQ.setText(txtKQ.getText() + 6);
 			}
 		});
 		btn6.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/SauButton.png")));
@@ -234,7 +296,7 @@ public class CalculatorApp {
 		frame.getContentPane().add(btn6);
 		
 		//Khai báo nút 7
-		JLabel btn7 = new JLabel("");
+		btn7 = new JLabel("");
 		//Xử lý sự kiện khi ấn nút 7
 		btn7.addMouseListener(new MouseAdapter() {
 			@Override
@@ -243,7 +305,15 @@ public class CalculatorApp {
 					txtKQ.setText("");
 					checked = true;
 				}
-				txtKQ.setText(txtKQ.getText() + String.valueOf(7));
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
+				txtKQ.setText(txtKQ.getText() + 7);
 			}
 		});
 		btn7.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/BayButton.png")));
@@ -251,7 +321,7 @@ public class CalculatorApp {
 		frame.getContentPane().add(btn7);
 		
 		//Khai báo nút 8
-		JLabel btn8 = new JLabel("");
+		btn8 = new JLabel("");
 		//Xử lý sự kiện khi ấn nút 8
 		btn8.addMouseListener(new MouseAdapter() {
 			@Override
@@ -260,7 +330,15 @@ public class CalculatorApp {
 					txtKQ.setText("");
 					checked = true;
 				}
-				txtKQ.setText(txtKQ.getText() + String.valueOf(8));
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
+				txtKQ.setText(txtKQ.getText() + 8);
 			}
 		});
 		btn8.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/TamButton.png")));
@@ -268,7 +346,7 @@ public class CalculatorApp {
 		frame.getContentPane().add(btn8);
 		
 		//Khai báo nút 9
-		JLabel btn9 = new JLabel("");
+		btn9 = new JLabel("");
 		//Xử lý sự kiện khi ấn nút 9
 		btn9.addMouseListener(new MouseAdapter() {
 			@Override
@@ -277,7 +355,15 @@ public class CalculatorApp {
 					txtKQ.setText("");
 					checked = true;
 				}
-				txtKQ.setText(txtKQ.getText() + String.valueOf(9));
+				if(checkNan == false) {
+					btnChia.setEnabled(true);
+					btnNhan.setEnabled(true);
+					btnCong.setEnabled(true);
+					btnTru.setEnabled(true);
+					txtPhepTinh.setText("");
+					checkNan = true;
+				}
+				txtKQ.setText(txtKQ.getText() + 9);
 			}
 		});
 		btn9.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/ChinButton.png")));
@@ -287,17 +373,20 @@ public class CalculatorApp {
 	
 	public void cacPhepTinh() {
 		//Khai báo nút cộng
-		JLabel btnCong = new JLabel("");
+		btnCong = new JLabel("");
 		//Xử lý sự kiện khi ấn nút cộng
 		btnCong.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				a = Double.parseDouble(txtKQ.getText());
-				if(a == (int) a) {
-					int inta = (int) a;
-					txtPhepTinh.setText(inta + " + ");
-				}else txtPhepTinh.setText(a + " + ");
-				checked = false;
+				if(checkNan == true) {
+					a = Double.parseDouble(txtKQ.getText());
+					if(a == (int) a) 
+						stra = String.format("%.0f", a);
+					else 
+						stra = String.valueOf(a);
+					txtPhepTinh.setText(stra + " + ");
+					checked = false;
+				}
 			}
 		});
 		btnCong.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/CongButton.png")));
@@ -305,11 +394,20 @@ public class CalculatorApp {
 		frame.getContentPane().add(btnCong);
 		
 		//Khai báo nút trừ
-		JLabel btnTru = new JLabel("");
+		btnTru = new JLabel("");
 		//Xử lý sự kiện khi ấn nút trừ
 		btnTru.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				if(checkNan == true) {
+					a = Double.parseDouble(txtKQ.getText());
+					if(a == (int) a) 
+						stra = String.format("%.0f", a);
+					else 
+						stra = String.valueOf(a);
+					txtPhepTinh.setText(stra + " - ");
+					checked = false;
+				}
 			}
 		});
 		btnTru.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/TruButton.png")));
@@ -317,11 +415,20 @@ public class CalculatorApp {
 		frame.getContentPane().add(btnTru);
 		
 		//Khai báo nút nhân
-		JLabel btnNhan = new JLabel("");
+		btnNhan = new JLabel("");
 		//Xử lý sự kiện khi ấn nút nhân
 		btnNhan.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				if(checkNan == true) {
+					a = Double.parseDouble(txtKQ.getText());
+					if(a == (int) a) 
+						stra = String.format("%.0f", a);
+					else 
+						stra = String.valueOf(a);
+					txtPhepTinh.setText(stra + " x ");
+					checked = false;
+				}
 			}
 		});
 		btnNhan.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/NhanButton.png")));
@@ -329,11 +436,20 @@ public class CalculatorApp {
 		frame.getContentPane().add(btnNhan);
 		
 		//Khai báo nút chia
-		JLabel btnChia = new JLabel("");
+		btnChia = new JLabel("");
 		//Xử lý sự kiện khi ấn nút chia
 		btnChia.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				if(checkNan == true) {
+					a = Double.parseDouble(txtKQ.getText());
+					if(a == (int) a) 
+						stra = String.format("%.0f", a);
+					else 
+						stra = String.valueOf(a);
+					txtPhepTinh.setText(stra + " ÷ ");
+					checked = false;
+				}
 			}
 		});
 		btnChia.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/ChiaButton.png")));
@@ -341,20 +457,70 @@ public class CalculatorApp {
 		frame.getContentPane().add(btnChia);
 		
 		//Khai báo nút bằng
-		JLabel btnBang = new JLabel("");
+		btnBang = new JLabel("");
 		//Xử lý sự kiện khi ấn nút bằng
 		btnBang.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				b = Double.parseDouble(txtKQ.getText());
-				if(b == (int) b) {
-					int intb = (int) b;
-					if(txtPhepTinh.getText().contains("+")) {
-						txtPhepTinh.setText( + intb + " =");
-						txtKQ.setText(String.valueOf(a + b));
-						a = b;
+				double kq = 0;
+				String strkq;
+				
+				if(checked == true) {
+					b = Double.parseDouble(txtKQ.getText());
+				}
+				
+				if(b == (int) b) 
+					strb = String.format("%.0f", b);
+				else 
+					strb = String.valueOf(b);
+				
+				if(checkNan == false) {
+					txtKQ.setText("0");
+					txtPhepTinh.setText("");
+				}
+				
+				//Phép tính cộng
+				if(txtPhepTinh.getText().contains("+")) {	
+					kq = a + b;
+					txtPhepTinh.setText(stra + " + " + strb + " =");
+				}
+				
+				//Phép tính trừ
+				if(txtPhepTinh.getText().contains(" - ")) {	
+					kq = a - b;
+					txtPhepTinh.setText(stra + " - " + strb + " =");
+				}
+				
+				//Phép tính nhân
+				if(txtPhepTinh.getText().contains("x")) {	
+					kq = a * b;
+					txtPhepTinh.setText(stra + " x " + strb + " =");
+				}
+				
+				//Phép tính chia
+				if(txtPhepTinh.getText().contains("÷")) {	
+					if(b == 0) {
+						txtKQ.setText("Nan");
+						btnChia.setEnabled(false);
+						btnNhan.setEnabled(false);
+						btnCong.setEnabled(false);
+						btnTru.setEnabled(false);
+						checkNan = false;
+					}
+					else {
+						kq = a / b;
+						txtPhepTinh.setText(stra + " ÷ " + strb + " =");
+						
 					}
 				}
+				if(kq == (int) kq) 
+					strkq = String.format("%.0f", kq);
+				else 
+					strkq = String.valueOf(kq);
+				txtKQ.setText(strkq);
+				a = kq;
+				stra = strkq;
+				
 				checked = false;
 			}
 		});
@@ -363,13 +529,20 @@ public class CalculatorApp {
 		frame.getContentPane().add(btnBang);
 		
 		//Khai báo nút CE
-		JLabel btnCE = new JLabel("");
+		btnCE = new JLabel("");
 		//Xử lý sự kiện khi ấn nút CE
 		btnCE.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				txtKQ.setText(String.valueOf(0));
+				if(txtPhepTinh.getText().contains("="))
+					txtPhepTinh.setText("");
+				btnChia.setEnabled(true);
+				btnNhan.setEnabled(true);
+				btnCong.setEnabled(true);
+				btnTru.setEnabled(true);
 				txtPhepTinh.setText("");
+				checkNan = true;
 			}
 		});
 		btnCE.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/CEButton.png")));
@@ -377,12 +550,19 @@ public class CalculatorApp {
 		frame.getContentPane().add(btnCE);
 		
 		//Khai báo nút C
-		JLabel btnC = new JLabel("");
+		btnC = new JLabel("");
 		//Xử lý sự kiện khi ấn nút C
 		btnC.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+				txtKQ.setText("0");
+				txtPhepTinh.setText("");
+				btnChia.setEnabled(true);
+				btnNhan.setEnabled(true);
+				btnCong.setEnabled(true);
+				btnTru.setEnabled(true);
+				txtPhepTinh.setText("");
+				checkNan = true;
 			}
 		});
 		btnC.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/CButton.png")));
@@ -390,11 +570,25 @@ public class CalculatorApp {
 		frame.getContentPane().add(btnC);
 		
 		//Khai báo nút del
-		JLabel btnDel = new JLabel("");
+		btnDel = new JLabel("");
 		//Xử lý sự kiện khi ấn nút del
 		btnDel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				if(!txtKQ.getText().equals("0")) {
+					StringBuilder strkq = new StringBuilder(txtKQ.getText());
+					strkq.deleteCharAt(strkq.length() - 1);
+					if(strkq.toString().equals("")) 
+						txtKQ.setText("0");
+					else
+						txtKQ.setText(strkq.toString());
+				}
+				btnChia.setEnabled(true);
+				btnNhan.setEnabled(true);
+				btnCong.setEnabled(true);
+				btnTru.setEnabled(true);
+				txtPhepTinh.setText("");
+				checkNan = true;
 			}
 		});
 		btnDel.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/DelButton.png")));
