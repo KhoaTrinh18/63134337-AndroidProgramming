@@ -11,14 +11,14 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 
-import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.zip.CheckedInputStream;
+import java.util.FormatFlagsConversionMismatchException;
+import java.awt.Toolkit;
 
 public class CalculatorApp {
 
-	private JFrame frame;
+	private JFrame frmCalculator;
 	private JTextField txtKQ;
 	private JTextField txtPhepTinh;
 	JLabel btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnCham, btnDau;
@@ -35,7 +35,7 @@ public class CalculatorApp {
 			public void run() {
 				try {
 					CalculatorApp window = new CalculatorApp();
-					window.frame.setVisible(true);
+					window.frmCalculator.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -54,10 +54,12 @@ public class CalculatorApp {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBackground(new Color(255, 255, 255));
-		frame.getContentPane().setBackground(new Color(45, 45, 45));
-		frame.getContentPane().setLayout(null);
+		frmCalculator = new JFrame();
+		frmCalculator.setTitle("Calculator");
+		frmCalculator.setIconImage(Toolkit.getDefaultToolkit().getImage(CalculatorApp.class.getResource("/img/CalculatorIcon.png")));
+		frmCalculator.setBackground(new Color(255, 255, 255));
+		frmCalculator.getContentPane().setBackground(new Color(45, 45, 45));
+		frmCalculator.getContentPane().setLayout(null);
 		
 		txtKQ = new JTextField();
 		txtKQ.setFocusable(false);
@@ -67,7 +69,7 @@ public class CalculatorApp {
 		txtKQ.setBackground(new Color(45, 45, 45));
 		txtKQ.setBounds(5, 107, 335, 81);
 		txtKQ.setBorder(null);
-		frame.getContentPane().add(txtKQ);
+		frmCalculator.getContentPane().add(txtKQ);
 		txtKQ.setColumns(10);
 		txtKQ.setText("0");
 		
@@ -81,9 +83,9 @@ public class CalculatorApp {
 		txtPhepTinh.setBackground(new Color(45, 45, 45));
 		txtPhepTinh.setBounds(5, 67, 335, 30);
 		
-		frame.getContentPane().add(txtPhepTinh);
-		frame.setBounds(100, 100, 360, 588);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmCalculator.getContentPane().add(txtPhepTinh);
+		frmCalculator.setBounds(100, 100, 360, 588);
+		frmCalculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		cacToanHang();
 		cacPhepTinh();
@@ -102,7 +104,7 @@ public class CalculatorApp {
 		});
 		btnDau.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/DauButton.png")));
 		btnDau.setBounds(5, 485, 80, 60);
-		frame.getContentPane().add(btnDau);
+		frmCalculator.getContentPane().add(btnDau);
 		
 		//Khai báo nút chấm
 		btnCham = new JLabel("");
@@ -117,7 +119,7 @@ public class CalculatorApp {
 		});
 		btnCham.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/ChamButton.png")));
 		btnCham.setBounds(175, 485, 80, 60);
-		frame.getContentPane().add(btnCham);
+		frmCalculator.getContentPane().add(btnCham);
 		
 		//Khai báo nút 0
 		btn0 = new JLabel("New label");
@@ -142,7 +144,7 @@ public class CalculatorApp {
 		});
 		btn0.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/KhongButton.png")));
 		btn0.setBounds(90, 485, 80, 60);
-		frame.getContentPane().add(btn0);
+		frmCalculator.getContentPane().add(btn0);
 		
 		//Khai báo nút 1
 		btn1 = new JLabel("");
@@ -167,7 +169,7 @@ public class CalculatorApp {
 		});
 		btn1.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/MotButton.png")));
 		btn1.setBounds(5, 420, 80, 60);
-		frame.getContentPane().add(btn1);
+		frmCalculator.getContentPane().add(btn1);
 		
 		//Khai báo nút 2
 		btn2 = new JLabel("");
@@ -192,7 +194,7 @@ public class CalculatorApp {
 		});
 		btn2.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/HaiButton.png")));
 		btn2.setBounds(90, 420, 80, 60);
-		frame.getContentPane().add(btn2);
+		frmCalculator.getContentPane().add(btn2);
 		
 		//Khai báo nút 3
 		btn3 = new JLabel("");
@@ -217,7 +219,7 @@ public class CalculatorApp {
 		});
 		btn3.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/BaButton.png")));
 		btn3.setBounds(175, 420, 80, 60);
-		frame.getContentPane().add(btn3);
+		frmCalculator.getContentPane().add(btn3);
 		
 
 		//Khai báo nút 4
@@ -243,7 +245,7 @@ public class CalculatorApp {
 		});
 		btn4.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/BonButton.png")));
 		btn4.setBounds(5, 355, 80, 60);
-		frame.getContentPane().add(btn4);
+		frmCalculator.getContentPane().add(btn4);
 		
 		//Khai báo nút 5
 		btn5 = new JLabel("");
@@ -268,7 +270,7 @@ public class CalculatorApp {
 		});
 		btn5.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/NamButton.png")));
 		btn5.setBounds(90, 355, 80, 60);
-		frame.getContentPane().add(btn5);
+		frmCalculator.getContentPane().add(btn5);
 		
 		//Khai báo nút 6
 		btn6 = new JLabel("");
@@ -293,7 +295,7 @@ public class CalculatorApp {
 		});
 		btn6.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/SauButton.png")));
 		btn6.setBounds(175, 355, 80, 60);
-		frame.getContentPane().add(btn6);
+		frmCalculator.getContentPane().add(btn6);
 		
 		//Khai báo nút 7
 		btn7 = new JLabel("");
@@ -318,7 +320,7 @@ public class CalculatorApp {
 		});
 		btn7.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/BayButton.png")));
 		btn7.setBounds(5, 290, 80, 60);
-		frame.getContentPane().add(btn7);
+		frmCalculator.getContentPane().add(btn7);
 		
 		//Khai báo nút 8
 		btn8 = new JLabel("");
@@ -343,7 +345,7 @@ public class CalculatorApp {
 		});
 		btn8.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/TamButton.png")));
 		btn8.setBounds(90, 290, 80, 60);
-		frame.getContentPane().add(btn8);
+		frmCalculator.getContentPane().add(btn8);
 		
 		//Khai báo nút 9
 		btn9 = new JLabel("");
@@ -368,7 +370,7 @@ public class CalculatorApp {
 		});
 		btn9.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/ChinButton.png")));
 		btn9.setBounds(175, 290, 80, 60);
-		frame.getContentPane().add(btn9);
+		frmCalculator.getContentPane().add(btn9);
 	}
 	
 	public void cacPhepTinh() {
@@ -379,11 +381,20 @@ public class CalculatorApp {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(checkNan == true) {
-					a = Double.parseDouble(txtKQ.getText());
-					if(a == (int) a) 
-						stra = String.format("%.0f", a);
-					else 
-						stra = String.valueOf(a);
+					if(txtPhepTinh.getText().equals("")) {
+						a = Double.parseDouble(txtKQ.getText());
+						if(a == (int) a) 
+							stra = String.format("%.0f", a);
+						else 
+							stra = String.valueOf(a);
+					} else {
+						a = a + Double.parseDouble(txtKQ.getText());
+						if(a == (int) a) 
+							stra = String.format("%.0f", a);
+						else 
+							stra = String.valueOf(a);
+						txtKQ.setText(stra);;
+					}
 					txtPhepTinh.setText(stra + " + ");
 					checked = false;
 				}
@@ -391,7 +402,7 @@ public class CalculatorApp {
 		});
 		btnCong.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/CongButton.png")));
 		btnCong.setBounds(260, 420, 80, 60);
-		frame.getContentPane().add(btnCong);
+		frmCalculator.getContentPane().add(btnCong);
 		
 		//Khai báo nút trừ
 		btnTru = new JLabel("");
@@ -400,11 +411,20 @@ public class CalculatorApp {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(checkNan == true) {
-					a = Double.parseDouble(txtKQ.getText());
-					if(a == (int) a) 
-						stra = String.format("%.0f", a);
-					else 
-						stra = String.valueOf(a);
+					if(txtPhepTinh.getText().equals("")) {
+						a = Double.parseDouble(txtKQ.getText());
+						if(a == (int) a) 
+							stra = String.format("%.0f", a);
+						else 
+							stra = String.valueOf(a);
+					} else {
+						a = a - Double.parseDouble(txtKQ.getText());
+						if(a == (int) a) 
+							stra = String.format("%.0f", a);
+						else 
+							stra = String.valueOf(a);
+						txtKQ.setText(stra);;
+					}
 					txtPhepTinh.setText(stra + " - ");
 					checked = false;
 				}
@@ -412,7 +432,7 @@ public class CalculatorApp {
 		});
 		btnTru.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/TruButton.png")));
 		btnTru.setBounds(260, 355, 80, 60);
-		frame.getContentPane().add(btnTru);
+		frmCalculator.getContentPane().add(btnTru);
 		
 		//Khai báo nút nhân
 		btnNhan = new JLabel("");
@@ -421,11 +441,19 @@ public class CalculatorApp {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(checkNan == true) {
-					a = Double.parseDouble(txtKQ.getText());
-					if(a == (int) a) 
-						stra = String.format("%.0f", a);
-					else 
-						stra = String.valueOf(a);
+					if(txtPhepTinh.getText().equals("")) {
+						a = Double.parseDouble(txtKQ.getText());
+						if(a == (int) a) 
+							stra = String.format("%.0f", a);
+						else 
+							stra = String.valueOf(a);
+					} else {
+						a = a * Double.parseDouble(txtKQ.getText());
+						if(a == (int) a) 
+							stra = String.format("%.0f", a);
+						else 
+							stra = String.valueOf(a);
+					}
 					txtPhepTinh.setText(stra + " x ");
 					checked = false;
 				}
@@ -433,7 +461,7 @@ public class CalculatorApp {
 		});
 		btnNhan.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/NhanButton.png")));
 		btnNhan.setBounds(260, 290, 80, 60);
-		frame.getContentPane().add(btnNhan);
+		frmCalculator.getContentPane().add(btnNhan);
 		
 		//Khai báo nút chia
 		btnChia = new JLabel("");
@@ -442,11 +470,28 @@ public class CalculatorApp {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(checkNan == true) {
-					a = Double.parseDouble(txtKQ.getText());
-					if(a == (int) a) 
-						stra = String.format("%.0f", a);
-					else 
-						stra = String.valueOf(a);
+					if(txtPhepTinh.getText().equals("")) {
+						a = Double.parseDouble(txtKQ.getText());
+						if(a == (int) a) 
+							stra = String.format("%.0f", a);
+						else 
+							stra = String.valueOf(a);
+					} else {
+						if(txtKQ.getText().equals("0")) {
+							btnChia.setEnabled(false);
+							btnNhan.setEnabled(false);
+							btnCong.setEnabled(false);
+							btnTru.setEnabled(false);
+							checkNan = false;
+							txtKQ.setText("Nan");
+						}else {
+							a = a / Double.parseDouble(txtKQ.getText());
+							if(a == (int) a) 
+								stra = String.format("%.0f", a);
+							else 
+								stra = String.valueOf(a);
+						}
+					}
 					txtPhepTinh.setText(stra + " ÷ ");
 					checked = false;
 				}
@@ -454,7 +499,7 @@ public class CalculatorApp {
 		});
 		btnChia.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/ChiaButton.png")));
 		btnChia.setBounds(260, 225, 80, 60);
-		frame.getContentPane().add(btnChia);
+		frmCalculator.getContentPane().add(btnChia);
 		
 		//Khai báo nút bằng
 		btnBang = new JLabel("");
@@ -533,7 +578,7 @@ public class CalculatorApp {
 		});
 		btnBang.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/BangButton.png")));
 		btnBang.setBounds(260, 485, 80, 60);
-		frame.getContentPane().add(btnBang);
+		frmCalculator.getContentPane().add(btnBang);
 		
 		//Khai báo nút CE
 		btnCE = new JLabel("");
@@ -556,7 +601,7 @@ public class CalculatorApp {
 		});
 		btnCE.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/CEButton.png")));
 		btnCE.setBounds(5, 225, 80, 60);
-		frame.getContentPane().add(btnCE);
+		frmCalculator.getContentPane().add(btnCE);
 		
 		//Khai báo nút C
 		btnC = new JLabel("");
@@ -578,7 +623,7 @@ public class CalculatorApp {
 		});
 		btnC.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/CButton.png")));
 		btnC.setBounds(90, 225, 80, 60);
-		frame.getContentPane().add(btnC);
+		frmCalculator.getContentPane().add(btnC);
 		
 		//Khai báo nút del
 		btnDel = new JLabel("");
@@ -600,12 +645,13 @@ public class CalculatorApp {
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
 					txtPhepTinh.setText("");
+					txtKQ.setText("0");
 					checkNan = true;
 				}
 			}
 		});
 		btnDel.setIcon(new ImageIcon(CalculatorApp.class.getResource("/img/DelButton.png")));
 		btnDel.setBounds(175, 225, 80, 60);
-		frame.getContentPane().add(btnDel);
+		frmCalculator.getContentPane().add(btnDel);
 	}
 }
