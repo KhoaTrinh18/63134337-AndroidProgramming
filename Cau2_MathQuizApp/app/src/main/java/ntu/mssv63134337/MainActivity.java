@@ -27,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+        btnQuit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public void getControl(){

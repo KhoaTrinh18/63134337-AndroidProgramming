@@ -27,24 +27,28 @@
         android:id="@+id/btn_continue"
         android:layout_width="155dp"
         android:layout_height="71dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/button_start"
         android:text="Continue"
         android:textAlignment="center"
         android:textColor="#FAF9F9"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="222dp"
-        tools:layout_editor_absoluteY="548dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
 
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="405dp"
+        android:layout_marginEnd="117dp"
         android:text="10/10"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="60sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="405dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

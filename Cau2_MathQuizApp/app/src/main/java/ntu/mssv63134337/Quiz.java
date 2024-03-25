@@ -45,12 +45,11 @@ public class Quiz extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onStop();
                 Intent myIntent = new Intent(Quiz.this, MainActivity.class);
                 startActivity(myIntent);
             }
         });
-        for(final Button o : options) {
+        for(Button o : options) {
             o.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -73,7 +72,6 @@ public class Quiz extends AppCompatActivity {
                     }
                 }
             });
-            break;
         }
     }
 
@@ -99,6 +97,7 @@ public class Quiz extends AppCompatActivity {
             Intent myIntent = new Intent(Quiz.this, Result.class);
             myIntent.putExtra("Score", score);
             startActivity(myIntent);
+            return;
         }
         checkPress = false;
         for(Button o : options){
