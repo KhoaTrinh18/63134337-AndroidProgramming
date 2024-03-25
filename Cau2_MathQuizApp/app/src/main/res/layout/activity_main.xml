@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/background">
+    android:background="@drawable/background_main">
 
     <ImageView
         android:id="@+id/imageView"
@@ -29,26 +29,26 @@
         app:srcCompat="@drawable/math_quiz" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_quit"
         android:layout_width="292dp"
         android:layout_height="98dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
-        android:background="@drawable/button"
+        android:background="@drawable/button_start"
         android:fontFamily="@font/russo_one"
         android:text="quit"
         android:textColor="#FFFFFF"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_start" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_start"
         android:layout_width="292dp"
         android:layout_height="98dp"
         android:layout_marginTop="112dp"
         android:layout_marginEnd="48dp"
-        android:background="@drawable/button"
+        android:background="@drawable/button_start"
         android:fontFamily="@font/russo_one"
         android:text="Start"
         android:textColor="#FFFFFF"
@@ -69,6 +69,6 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_quit" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
