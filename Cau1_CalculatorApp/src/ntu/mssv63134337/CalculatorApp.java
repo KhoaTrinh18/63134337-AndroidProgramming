@@ -136,6 +136,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -161,6 +163,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -186,6 +190,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -211,6 +217,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -237,6 +245,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -262,6 +272,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -287,6 +299,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -312,6 +326,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -337,6 +353,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -362,6 +380,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -482,6 +502,8 @@ public class CalculatorApp {
 							btnNhan.setEnabled(false);
 							btnCong.setEnabled(false);
 							btnTru.setEnabled(false);
+							btnCham.setEnabled(false);
+							btnDau.setEnabled(false);
 							checkNan = false;
 							txtKQ.setText("Nan");
 						}else {
@@ -524,6 +546,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 					txtKQ.setText("0");
@@ -556,6 +580,8 @@ public class CalculatorApp {
 						btnNhan.setEnabled(false);
 						btnCong.setEnabled(false);
 						btnTru.setEnabled(false);
+						btnCham.setEnabled(false);
+						btnDau.setEnabled(false);
 						checkNan = false;
 						txtPhepTinh.setText(stra + " ÷ " + strb + " =");
 					}
@@ -594,6 +620,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -616,6 +644,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					checkNan = true;
 				}
@@ -644,6 +674,8 @@ public class CalculatorApp {
 					btnNhan.setEnabled(true);
 					btnCong.setEnabled(true);
 					btnTru.setEnabled(true);
+					btnCham.setEnabled(true);
+					btnDau.setEnabled(true);
 					txtPhepTinh.setText("");
 					txtKQ.setText("0");
 					checkNan = true;
