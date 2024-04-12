@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,7 +50,7 @@ public class LandScapeAdapter extends RecyclerView.Adapter<LandScapeAdapter.Item
         return lData.size();
     }
 
-    class ItemLandHolder extends RecyclerView.ViewHolder{
+    class ItemLandHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView tvLandScapeName;
         ImageView ivLandScapeImage;
 
@@ -57,6 +58,16 @@ public class LandScapeAdapter extends RecyclerView.Adapter<LandScapeAdapter.Item
             super(itemView);
             tvLandScapeName = itemView.findViewById(R.id.landScapeName);
             ivLandScapeImage = itemView.findViewById(R.id.landScapeImage);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            LandScape landScape = lData.get(position);
+            String nameLand = landScape.getLandName();
+            String str = "Bạn vừa click vào: " + nameLand;
+            Toast.makeText(v.getContext(), str, Toast.LENGTH_SHORT).show();
         }
     }
 
