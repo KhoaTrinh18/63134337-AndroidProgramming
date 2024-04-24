@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "intent_vidu1"
+rootProject.name = "Intent_vidu1"
 include(":app")
