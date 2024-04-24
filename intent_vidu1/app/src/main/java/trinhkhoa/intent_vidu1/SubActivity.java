@@ -23,6 +23,7 @@ public class SubActivity extends AppCompatActivity {
             return insets;
         });
     }
+
     public void quayVe(View v){
         Intent iManHinhChinh = new Intent(this, MainActivity.class);
         startActivity(iManHinhChinh);
