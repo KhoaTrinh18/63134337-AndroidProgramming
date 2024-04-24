@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+
     public void chuyenManHinh(View v){
         Intent iManHinhKhac = new Intent(this, SubActivity.class);
         startActivity(iManHinhKhac);
