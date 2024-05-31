@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:title="Câu 5" />
+    <item
+        android:id="@+id/cau1"
+        android:icon="@drawable/home"
+        android:title="Câu 1" />
+
+    <item
+        android:id="@+id/cau2"
+        android:icon="@drawable/home"
+        android:title="Câu 2" />
+
+    <item
+        android:id="@+id/cau3"
+        android:icon="@drawable/home"
+        android:title="Câu 3" />
+
+    <item
+        android:id="@+id/cau4"
+        android:icon="@drawable/home"
+        android:title="Câu 4" />
+</menu>
